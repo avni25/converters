@@ -11,30 +11,44 @@
   <body>
     <h1> DC-DC Converters</h1>
     <div>
-        <div id="buck-inputs-container">
-            <p>
-                <label>V.in</label>
-                <input type="text" class="buck-values" id="v-in"/> V
-            </p>
-            <p>
-                <label>V.out</label>
-                <input type="text" class="buck-values" id="v-out"/> V
-            </p>
-            <p>
-                <label>Ripple ratio</label>
-                <input type="text" class="buck-values" id="ripple" value=0.005 /> %   
-            </p>
-            <p>
-                <label>frequency</label>
-                <input type="text" class="buck-values" id="freq" value=40000 /> Hz
-            </p>
-            <p>
-                <label>Res</label>
-                <input type="text" class="buck-values" id="res" value=10 /> Ohm
-            </p>
-            
-            <button id="buck-btn" class="btn btn-primary">calculate</button>
+        <div id="buck-container" >
+            <div id="buck-inputs-container">
+                <h3>Buck Converter</h3>
+                <p>
+                    <label>V.in (V)</label>
+                    <input type="text" class="buck-values" id="v-in"/>
+                </p>
+                <p>
+                    <label>V.out (V)</label>
+                    <input type="text" class="buck-values" id="v-out"/>
+                </p>
+                <p>
+                    <label>Ripple %</label>
+                    <input type="text" class="buck-values" id="ripple" value=0.005 />  
+                </p>
+                <p>
+                    <label>freq (Hz)</label>
+                    <input type="text" class="buck-values" id="freq" value=40000 />
+                </p>
+                <p>
+                    <label>Res (Ohm)</label>
+                    <input type="text" class="buck-values" id="res" value=10 />
+                </p>
+                
+                <button id="buck-btn" class="btn btn-primary">calculate</button>
+            </div>
+            <div id="buck-results-container">
+                <label>inductor</label>
+                <label></label>
+                <label></label>
+                <label></label>
+                <label></label>
+            </div>
+            <div id="buck-circuit-container">
+                <label>image</label>
+            </div>
         </div>
+        
     </div>
     
 

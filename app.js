@@ -1,6 +1,6 @@
 const inputs = document.querySelectorAll(".buck-values");
 const buck_btn = document.getElementById("buck-btn");
-
+const buck_contaier = document.getElementById("buck-inputs-container");
 
 function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
 
@@ -36,8 +36,13 @@ buck_btn.addEventListener("click", ()=>{
         vals.push(parseFloat(input.value));
     });
     console.log(vals);
-    console.table(calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]))
+    console.table(calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]));
+    var obj = calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
 
+    const label = document.createElement("label");
+    label.setAttribute("class", "buck-results");
+    label.textContent = `ìnductor: ${obj.inductor}`; 
+    buck_contaier.appendChild(label);
 })
 
 

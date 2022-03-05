@@ -1,8 +1,23 @@
+#buck-container{
+    background-color: rgb(9, 29, 117);
+    width: 100%;
+    display: flex;
+}
+
 #buck-inputs-container{
-    padding-top: 2%;
+    padding: 1%;
     display: inline-block;
-    width: 300px;
+    width: 60%;
     background-color: rgb(15, 109, 109);
+}
+
+#buck-results-container{
+    background-color: rgb(88, 12, 85);
+    width: 50%;
+}
+#buck-circuit-container{
+    background-color:  rgb(190, 181, 54);
+    width: 100%;
 }
 label {
     width: 120px;
