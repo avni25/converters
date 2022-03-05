@@ -1,0 +1,14 @@
+#buck-inputs-container{
+    padding-top: 2%;
+    display: inline-block;
+    width: 300px;
+    background-color: rgb(15, 109, 109);
+}
+label {
+    width: 120px;
+    background-color: aqua;
+}
+.buck-values{
+    width: 100px;
+    
+}
