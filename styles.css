@@ -1,29 +1,33 @@
-#buck-container{
-    background-color: rgb(9, 29, 117);
+#buck-container, #boost-container{
     width: 100%;
     display: flex;
 }
 
-#buck-inputs-container{
+#buck-inputs-container, #boost-inputs-container{
     padding: 1%;
     display: inline-block;
     width: 60%;
     background-color: rgb(15, 109, 109);
 }
 
-#buck-results-container{
-    background-color: rgb(110, 101, 110);
+#buck-results-container, #boost-results-container{
+    background-color: rgb(136, 131, 136);
+    padding: 1%;
     width: 50%;
 }
-#buck-circuit-container{
-    background-color:  rgb(190, 181, 54);
+#buck-circuit-container, #boost-circuit-container{
     width: 100%;
 }
 label {
     width: 120px;
-    background-color: aqua;
+    font-weight: bold;
 }
-.buck-values{
+.buck-values, .boost-values{
     width: 100px;
     
+}
+
+.buck-result-text, .boost-result-text{
+    font-weight: bold;
+    color:rgb(104, 10, 29);
 }

@@ -16,11 +16,11 @@
                 <h3>Buck Converter</h3>
                 <p>
                     <label>V.in (V)</label>
-                    <input type="text" class="buck-values" id="v-in"/>
+                    <input type="text" class="buck-values" id="v-in" value=12 />
                 </p>
                 <p>
                     <label>V.out (V)</label>
-                    <input type="text" class="buck-values" id="v-out"/>
+                    <input type="text" class="buck-values" id="v-out" value=5 />
                 </p>
                 <p>
                     <label>Ripple %</label>
@@ -38,18 +38,57 @@
                 <button id="buck-btn" class="btn btn-primary">calculate</button>
             </div>
             <div id="buck-results-container">
-                <p>Inductor: <span class="buck-result-text" style="color: rgb(30, 124, 58)"></span></p>
-                <p>Capacitor: <span class="buck-result-text" style="color: rgb(30, 124, 58)"></span></p>
-                <p>IL: <span class="buck-result-text" style="color: rgb(30, 124, 58)"></span></p>
-                <p>Imax: <span class="buck-result-text" style="color: rgb(30, 124, 58)"></span></p>
-                <p>Imin: <span class="buck-result-text" style="color: rgb(30, 124, 58)"></span></p>
+                <p>Inductor: <span class="buck-result-text" ></span></p>
+                <p>Capacitor: <span class="buck-result-text" ></span></p>
+                <p>IL: <span class="buck-result-text" ></span></p>
+                <p>Imax: <span class="buck-result-text" ></span></p>
+                <p>Imin: <span class="buck-result-text" ></span></p>
                 
             </div>
             <div id="buck-circuit-container">
-                <label>image</label>
+                <img src="buck.png" width="100%" height="80%" />
             </div>
         </div>
-        
+        <br>
+        <div id="boost-container" >
+            <div id="boost-inputs-container">
+                <h3>Boost Converter</h3>
+                <p>
+                    <label>V.in (V)</label>
+                    <input type="text" class="boost-values" id="v-in" value=5 />
+                </p>
+                <p>
+                    <label>V.out (V)</label>
+                    <input type="text" class="boost-values" id="v-out" value=12 />
+                </p>
+                <p>
+                    <label>Ripple %</label>
+                    <input type="text" class="boost-values" id="ripple" value=0.01 />  
+                </p>
+                <p>
+                    <label>freq (Hz)</label>
+                    <input type="text" class="boost-values" id="freq" value=25000 />
+                </p>
+                <p>
+                    <label>Res (Ohm)</label>
+                    <input type="text" class="boost-values" id="res" value=50 />
+                </p>
+                
+                <button id="boost-btn" class="btn btn-primary">calculate</button>
+            </div>
+            <div id="boost-results-container">
+                <p>Inductor: <span class="boost-result-text" ></span></p>
+                <p>Capacitor: <span class="boost-result-text" ></span></p>
+                <p>IL: <span class="boost-result-text" ></span></p>
+                <p>Imax: <span class="boost-result-text" ></span></p>
+                <p>Imin: <span class="boost-result-text" ></span></p>
+                
+            </div>
+            <div id="boost-circuit-container">
+                <img src="boost.png" width="100%" height="80%" />
+            </div>
+        </div>
+
     </div>
     
 

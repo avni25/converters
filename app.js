@@ -39,7 +39,8 @@ buck_btn.addEventListener("click", ()=>{
 
 
     for(var i=0;i<spans.length; i++){
-        spans[i].value =  arr[i];
+        spans[i].textContent =  arr[i];
+        console.log(arr[i]);
     }
     
 
