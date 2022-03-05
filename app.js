@@ -53,13 +53,16 @@ buck_btn.addEventListener("click", ()=>{
         vals.push(parseFloat(input.value));
     });
     // console.table(calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]));
-    var arr = calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
-
-
-    for(var i=0;i<spans.length; i++){
-        spans[i].textContent =  arr[i];
-        console.log(arr[i]);
+    if(vals[0] <= vals[1]){
+        spans[0].textContent =  "wrong input";
+    }else{
+        var arr = calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
+        for(var i=0;i<spans.length; i++){
+            spans[i].textContent =  arr[i];
+            console.log(arr[i]);
+        }
     }
+    
 });
 
 boost_btn.addEventListener("click", ()=>{
@@ -71,10 +74,10 @@ boost_btn.addEventListener("click", ()=>{
         boostSpans[0].textContent =  "wrong input";
     }else{
         var arr = calculateBoostComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
-    for(var i=0;i<spans.length; i++){
-        boostSpans[i].textContent =  arr[i];
-        console.log(arr[i]);
-    }
+        for(var i=0;i<spans.length; i++){
+            boostSpans[i].textContent =  arr[i];
+            console.log(arr[i]);
+        }
     }
     
 });
