@@ -1,6 +1,8 @@
 const inputs = document.querySelectorAll(".buck-values");
 const buck_btn = document.getElementById("buck-btn");
-const buck_contaier = document.getElementById("buck-inputs-container");
+const buck_results_contaier = document.getElementById("buck-results-container");
+const spans = document.querySelectorAll(".buck-result-text");
+
 
 function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
 
@@ -18,31 +20,30 @@ function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
     // console.log("il rms: "+il_rms);
     var c = (1-D) / (8 * lmin * (rippleRatio) * Math.pow(freq, 2));
     // console.log("c: "+c);
-    var obj = {
-        inductor: lmin,
-        capacitor: c,
-        currentOnInd: il_rms,
-        maxCurrent: imax,
-        minCurrent: imin
-    };
-
-    return obj;
+    
+    var arr = [];
+    arr = arr.concat(lmin, c, il_rms, imax, imin);
+    return arr;
 
 }
+
+
 
 buck_btn.addEventListener("click", ()=>{
     var vals=[];
     inputs.forEach((input)=>{        
         vals.push(parseFloat(input.value));
     });
-    console.log(vals);
-    console.table(calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]));
-    var obj = calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
+    // console.table(calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]));
+    var arr = calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
 
-    const label = document.createElement("label");
-    label.setAttribute("class", "buck-results");
-    label.textContent = `ìnductor: ${obj.inductor}`; 
-    buck_contaier.appendChild(label);
+
+    for(var i=0;i<spans.length; i++){
+        spans[i].value =  arr[i];
+    }
+    
+
+
 })
 
 
