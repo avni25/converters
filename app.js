@@ -1,7 +1,6 @@
 const inputs = document.querySelectorAll(".buck-values");
 const buck_btn = document.getElementById("buck-btn");
 
-console.log(inputs[0])
 
 function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
 
@@ -33,11 +32,13 @@ function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
 
 buck_btn.addEventListener("click", ()=>{
     var vals=[];
-    inputs.forEach((input)=>{
-        input.textContent
-    })
+    inputs.forEach((input)=>{        
+        vals.push(parseFloat(input.value));
+    });
+    console.log(vals);
+    console.table(calculateBuckComps(vals[0],vals[1],vals[2],vals[3],vals[4]))
+
 })
 
 
-console.table(calculateBuckComps(12, 5, 0.005, 40000, 10));
 
