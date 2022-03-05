@@ -1,5 +1,7 @@
 const inputs = document.querySelectorAll(".buck-values");
+const boostInputs = document.querySelectorAll(".boost-values");
 const buck_btn = document.getElementById("buck-btn");
+const boost_btn = document.getElementById("boost-btn");
 const buck_results_contaier = document.getElementById("buck-results-container");
 const spans = document.querySelectorAll(".buck-result-text");
 
@@ -22,10 +24,25 @@ function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
     // console.log("c: "+c);
     
     var arr = [];
-    arr = arr.concat(lmin, c, il_rms, imax, imin);
+    arr = arr.concat(lmin, c, il_rms, imax, imin, D);
     return arr;
 
 }
+
+function calculateBoostComps(v_in, v_out, rippleRatio, freq, res){
+    var D = 1-(v_in / v_out);
+    var lmin = ((D * Math.pow(1-D, 2) * res) / (2*freq) ) * 1.2;
+    var IL = v_in / (Math.pow(1-D, 2) * res);
+    var delta_il = (v_in * D) / (lmin * freq);
+
+    var c = D / (res * rippleRatio * freq);
+    var arr = [];
+    arr = arr.concat(lmin, c, IL, D);
+
+    return arr;
+
+}
+
 
 
 
@@ -42,10 +59,12 @@ buck_btn.addEventListener("click", ()=>{
         spans[i].textContent =  arr[i];
         console.log(arr[i]);
     }
-    
+});
 
+boost_btn.addEventListener("click", ()=>{
+    console.log(calculateBoostComps(5, 12, 0.01, 25000, 50));
+});
 
-})
 
 
 
