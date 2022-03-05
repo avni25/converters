@@ -4,6 +4,7 @@ const buck_btn = document.getElementById("buck-btn");
 const boost_btn = document.getElementById("boost-btn");
 const buck_results_contaier = document.getElementById("buck-results-container");
 const spans = document.querySelectorAll(".buck-result-text");
+const boostSpans = document.querySelectorAll(".boost-result-text");
 
 
 function calculateBuckComps(v_in, v_out, rippleRatio, freq, res){
@@ -62,7 +63,15 @@ buck_btn.addEventListener("click", ()=>{
 });
 
 boost_btn.addEventListener("click", ()=>{
-    console.log(calculateBoostComps(5, 12, 0.01, 25000, 50));
+    var vals =[];
+    boostInputs.forEach((input)=>{
+        vals.push(parseFloat(input.value))
+    });
+    var arr = calculateBoostComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
+    for(var i=0;i<spans.length; i++){
+        boostSpans[i].textContent =  arr[i];
+        console.log(arr[i]);
+    }
 });
 
 
