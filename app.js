@@ -67,11 +67,16 @@ boost_btn.addEventListener("click", ()=>{
     boostInputs.forEach((input)=>{
         vals.push(parseFloat(input.value))
     });
-    var arr = calculateBoostComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
+    if(vals[0] >= vals[1]){
+        boostSpans[0].textContent =  "wrong input";
+    }else{
+        var arr = calculateBoostComps(vals[0],vals[1],vals[2],vals[3],vals[4]);
     for(var i=0;i<spans.length; i++){
         boostSpans[i].textContent =  arr[i];
         console.log(arr[i]);
     }
+    }
+    
 });
 
 
